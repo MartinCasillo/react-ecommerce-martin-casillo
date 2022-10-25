@@ -1,9 +1,15 @@
+.navbar{
+    font-size: 16px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
 .navContent{
     font-family: sans-serif;
-    font-weight: 700;
+    font-weight: 530;
 }
 
 .navItems li a{
-    color: #fff;
+    color: #040404;
 }
+
+
 

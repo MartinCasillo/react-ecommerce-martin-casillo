@@ -1,12 +1,24 @@
 import React from 'react'
-import './itemlistcontainer.css'
+import Card from '../ProductCard/Card'
+import products from '../data/Productos'
 
-function ItemListContainer(props) {
+function ItemListContainer() {
   return (
-    <div className='container contenedor-titulo'>
-        <h1>{props.greeting}</h1>
+    <div className="container text-center mt-5 py-5">
+      <div className="row mx-auto container-fluid">
+      {
+        products.map((product)=>(
+          <Card 
+            imgUrl={product.imgUrl}
+            title={product.title}
+            price={product.price}
+          />
+        ))
+      }
+      </div>
     </div>
-  )
+
+);
 }
 
 export default ItemListContainer

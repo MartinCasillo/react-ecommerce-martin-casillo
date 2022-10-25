@@ -4,9 +4,9 @@ import CartWidget from "../CartWidget/CartWidget";
 
 function NavBar(){
     return(
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark navContent">
+        <nav className="navbar navbar-expand-lg navbar-light bg-secondary bg-opacity-25 navContent">
             <div className="container">
-                <a className="navbar-brand" href="#inicio">La Cirilla Grill</a>
+                <a className="navbar-brand" href="#inicio">Reflex Watche's</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
@@ -16,7 +16,7 @@ function NavBar(){
                     <a className="nav-link" href="#inicio">Inicio</a>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href="#productos">Productos</a>
+                    <a className="nav-link " href="#productos">Productos</a>
                     </li>
                     <li className="nav-item">
                     <a className="nav-link" href="#contacto">Contacto</a>
