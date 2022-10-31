@@ -1,22 +1,23 @@
-import React from 'react'
-import Card from '../ProductCard/Card'
-import products from '../data/Productos'
+import React, {useState, useEffect} from 'react'
+import getItemsFromAPI from '../../mockService/mockService';
+import ItemList from './ItemList';
+
 
 function ItemListContainer() {
+  const [productsList,setProductList] = useState([]);
+
+  useEffect(()=>{
+      getItemsFromAPI().then((itemsDB)=>{
+        console.log(itemsDB);
+        setProductList(itemsDB); 
+      });
+    },[]
+  )
+
   return (
     <div className="container text-center mt-5 py-5">
-      <div className="row mx-auto container-fluid">
-      {
-        products.map((product)=>(
-          <Card 
-            imgUrl={product.imgUrl}
-            title={product.title}
-            price={product.price}
-          />
-        ))
-      }
-      </div>
-    </div>
+      <ItemList productsList={productsList}/>
+    </div> 
 
 );
 }

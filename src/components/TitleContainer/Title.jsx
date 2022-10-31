@@ -1,5 +1,5 @@
 import React from 'react'
-import './tittle.css'
+import './title.css'
 
 function Tittle(props) {
   return (
