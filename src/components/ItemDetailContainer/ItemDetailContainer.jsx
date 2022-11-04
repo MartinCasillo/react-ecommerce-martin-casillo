@@ -6,10 +6,12 @@ import { useParams } from 'react-router-dom';
 
 function ItemDetailContainer() {
   const [product,setProduct] = useState([]);
-  console.log(useParams())
+  const {id} = useParams()
+
+
   useEffect(()=>{
-      getSingleItemsFromAPI().then((itemsDB)=>{
-        console.log(itemsDB);
+      getSingleItemsFromAPI(id).then((itemsDB)=>{
+        // console.log(itemsDB);
         setProduct(itemsDB); 
       });
     },[]

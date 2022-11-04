@@ -167,14 +167,21 @@ export default function getItemsFromAPI(){
     return new Promise((resolve)=>{
         setTimeout(()=>{
             resolve(itemsDB);
-        },1500);
+        },500);
     });
 }
 
-export  function getSingleItemsFromAPI(){
-    return new Promise((resolve)=>{
+export function getSingleItemsFromAPI(id){
+    return new Promise((resolve,reject)=>{
         setTimeout(()=>{
-            resolve(itemsDB[2]);
-        },1000);
+            let itemRequested = itemsDB.find(
+                (item)=>item.id === Number(id))
+            if(itemRequested){
+                resolve(itemRequested);
+            }else{
+                reject( new Error("El item no existe."));
+            }
+            
+        },500);
     });
 }

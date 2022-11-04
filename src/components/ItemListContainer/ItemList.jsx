@@ -13,6 +13,7 @@ function ItemList(props) {
                 title={product.title}
                 price={product.price}
                 stock={product.stock}
+                id={product.id}
             />
             ))
         }
