@@ -1,6 +1,8 @@
 import React from 'react'
 import "./card.css";
 import {AiOutlineStar} from "react-icons/ai";
+import { Link } from 'react-router-dom';
+
 
 function Card(props) {
   return (
@@ -15,7 +17,10 @@ function Card(props) {
         </div>
         <h5 className="p-name">{props.title}</h5>
         <h4 className="p-price">$ {props.price}</h4>
-        <button className="buy-btn">COMPRAR AHORA</button>
+        <Link to={`/detalle/${props.id}`}>
+          <button className="buy-btn">COMPRAR AHORA</button>
+        </Link>
+        
 </div>
   )
 }

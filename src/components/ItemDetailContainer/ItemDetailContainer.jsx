@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import { getSingleItemsFromAPI } from '../../mockService/mockService';
 import ItemDetail from './ItemDetail';
-
+import { useParams } from 'react-router-dom';
 
 
 function ItemDetailContainer() {
   const [product,setProduct] = useState([]);
-
+  console.log(useParams())
   useEffect(()=>{
       getSingleItemsFromAPI().then((itemsDB)=>{
         console.log(itemsDB);

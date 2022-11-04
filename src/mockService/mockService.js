@@ -167,7 +167,7 @@ export default function getItemsFromAPI(){
     return new Promise((resolve)=>{
         setTimeout(()=>{
             resolve(itemsDB);
-        },2000);
+        },1500);
     });
 }
 
@@ -175,6 +175,6 @@ export  function getSingleItemsFromAPI(){
     return new Promise((resolve)=>{
         setTimeout(()=>{
             resolve(itemsDB[2]);
-        },2000);
+        },1000);
     });
 }

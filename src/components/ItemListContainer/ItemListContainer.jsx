@@ -5,7 +5,6 @@ import ItemList from './ItemList';
 
 function ItemListContainer() {
   const [productsList,setProductList] = useState([]);
-
   useEffect(()=>{
       getItemsFromAPI().then((itemsDB)=>{
         console.log(itemsDB);
