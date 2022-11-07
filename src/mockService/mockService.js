@@ -185,3 +185,14 @@ export function getSingleItemsFromAPI(id){
         },500);
     });
 }
+
+export function getItemsFromAPIByCategory(categoryid){
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            let itemRequested = itemsDB.filter( item => item.category === categoryid)
+            resolve(itemRequested);
+        },500);
+    });
+}
+
+

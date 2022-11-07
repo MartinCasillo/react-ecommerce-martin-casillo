@@ -1,0 +1,12 @@
+
+.buttonDecrement, .buttonIncrement {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.buttonDecrement:hover, .buttonIncrement:hover{
+    background-color: #000;
+    color: #fff;
+} 

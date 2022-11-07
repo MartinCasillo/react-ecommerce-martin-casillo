@@ -1,4 +1,5 @@
 import React from 'react'
+import { ClickCounter } from '../ClickCounter/ClickCounter'
 import './itemdetail.css'
 
 function ItemDetail({product}) {
@@ -33,7 +34,7 @@ function ItemDetail({product}) {
                 <option>Small</option>
                 <option>Large</option>
             </select>
-            <input type="number"/>
+            <ClickCounter stock={product.stock}/>
             <button className="buy-btn">Add To Cart</button>
             <h4 className="mt-5 mb-5">Product Details</h4>
             <span>{product.detail}</span> 
