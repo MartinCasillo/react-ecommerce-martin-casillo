@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { ClickCounter } from '../ClickCounter/ClickCounter'
 import './itemdetail.css'
 
 function ItemDetail({product}) {
+    const [isInCart, setIsInCart] = useState(false)
+    const onAddToCart = (count) => {
+        alert( `Agregadas ${count} unidades de ${product.title} al carrito`)
+    }
   return (
     <div className="container sproduct my-5 pt-5">
     <div className="row mt-5 mx-5">
@@ -34,10 +38,16 @@ function ItemDetail({product}) {
                 <option>Small</option>
                 <option>Large</option>
             </select>
-            <ClickCounter stock={product.stock}/>
-            <button className="buy-btn">Add To Cart</button>
             <h4 className="mt-5 mb-5">Product Details</h4>
-            <span>{product.detail}</span> 
+            <span>{product.detail}</span>
+            <br></br>
+            {isInCart ? (
+                <button className='mt-5'>Ir al Carrito</button>
+                
+                ) : (
+                    <ClickCounter text="Add To Cart" onAddToCart={onAddToCart} stock={product.stock}/>
+                )   
+        } 
         </div>
     </div>
 </div>

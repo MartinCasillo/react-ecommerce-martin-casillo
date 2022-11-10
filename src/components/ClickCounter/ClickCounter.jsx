@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import './clickcounter.css';
+import '../ItemDetailContainer/itemdetail.css';
 
-export const ClickCounter = ({stock}) => {
+export const ClickCounter = ({stock,onAddToCart,text}) => {
   
     const [ cantidad , setCantidad ] = useState(1)
   
@@ -21,6 +22,8 @@ export const ClickCounter = ({stock}) => {
         <button className='buttonDecrement' onClick={handleDecrement}>-</button>
         <p>{cantidad}</p>
         <button className='buttonIncrement' onClick={handleIncrement}>+</button>
+        <br></br>
+        <button onClick={ () => onAddToCart(cantidad)} className="buy-btn">{text}</button>
     </div>
   )
 }
