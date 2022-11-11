@@ -1,11 +1,36 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { ClickCounter } from '../ClickCounter/ClickCounter'
 import './itemdetail.css'
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
+import cartContext from '../storage/CartContext'
+
 
 function ItemDetail({product}) {
     const [isInCart, setIsInCart] = useState(false)
+    const navigate = useNavigate();
+    const {addToCart,cart} = useContext(cartContext);
+
+
     const onAddToCart = (count) => {
-        alert( `Agregadas ${count} unidades de ${product.title} al carrito`)
+        Swal.fire({
+            title:"Item agregado al carrito!",
+            text:"¿Desea ir al carrito?",
+            icon:"success",
+            confirmButtonText:"Ir al carrito",
+        }).then((result)=>{
+            if(result.isConfirmed){
+                navigate("/cart")
+            }
+        })
+        const itemForCart={
+            ...product,
+            count
+        }
+        
+        addToCart(itemForCart)
+        
+        setIsInCart(true)
     }
   return (
     <div className="container sproduct my-5 pt-5">
@@ -41,12 +66,15 @@ function ItemDetail({product}) {
             <h4 className="mt-5 mb-5">Product Details</h4>
             <span>{product.detail}</span>
             <br></br>
-            {isInCart ? (
-                <button className='mt-5'>Ir al Carrito</button>
+            {!isInCart ? (
+                        <ClickCounter text="Add To Cart" onAddToCart={onAddToCart} stock={product.stock}/>
                 
                 ) : (
-                    <ClickCounter text="Add To Cart" onAddToCart={onAddToCart} stock={product.stock}/>
-                )   
+                    <div>
+                        <button className='p-5'>Ir al Catalogo</button>
+                        <button className='p-5'>Ir al Carrito</button>
+                    </div>
+                    )   
         } 
         </div>
     </div>
