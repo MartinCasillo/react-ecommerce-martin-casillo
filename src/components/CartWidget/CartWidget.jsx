@@ -4,13 +4,13 @@ import cartContext from '../storage/CartContext';
 
 
 function CartWidget() {
-  const {itemsInCart} = useContext(cartContext);
+  const {totalItemsInCart} = useContext(cartContext);
   
   
   return (
     <>
         <AiOutlineShopping />
-        <small>{itemsInCart()}</small>
+        <small>{totalItemsInCart()}</small>
     </>
   )
 }

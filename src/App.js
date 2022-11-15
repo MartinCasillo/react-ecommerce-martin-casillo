@@ -6,6 +6,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer.
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartContextProvider } from './components/storage/CartContext';
+import FooterContainer from './components/Footer/FooterContainer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="*" element={ <h1 className='text-center'>404: Ruta no encontrada</h1>}/>
             </Routes>
         </BrowserRouter>
+        <FooterContainer/>
       </CartContextProvider>  
     </div>
   );
