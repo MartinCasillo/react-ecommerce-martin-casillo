@@ -22,16 +22,10 @@ export function CartContextProvider(props) {
 
       setCart(newCart);
     } else {
-      /*  else {
       const newCart = [...cart];
       newCart.push(itemData);
       setCart(newCart);
-    } */
-      setCart((newCart) => {
-        newCart.push(itemData);
-        return newCart;
-      });
-    }
+    } 
   }
 
   function totalItemsInCart() {
@@ -60,7 +54,6 @@ export function CartContextProvider(props) {
     totalItemsInCart,
   };
 
-  //3.Creamos el "value" para los componentes que consuman el context
 
   return (
     //4. retornamos el Context Provider con el value creado

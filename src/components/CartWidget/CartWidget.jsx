@@ -10,7 +10,11 @@ function CartWidget() {
   return (
     <>
         <AiOutlineShopping />
-        <small>{totalItemsInCart()}</small>
+        {
+          (totalItemsInCart() > 0)?
+          <small>{totalItemsInCart()}</small>
+          : <></>
+        }
     </>
   )
 }

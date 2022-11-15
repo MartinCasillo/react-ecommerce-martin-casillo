@@ -4,6 +4,7 @@ import './itemdetail.css'
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
 import cartContext from '../storage/CartContext'
+import { Link } from 'react-router-dom';
 
 
 function ItemDetail({product}) {
@@ -73,7 +74,7 @@ function ItemDetail({product}) {
                     ) : (
                         <div>
                             <button className='p-5'>Ir al Catalogo</button>
-                            <button className='p-5'>Ir al Carrito</button>
+                            <Link to="/cart"><button className='p-5'>Ir al Carrito</button></Link>
                         </div>
                         )   
             } 

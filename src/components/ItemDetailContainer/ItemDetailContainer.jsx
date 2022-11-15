@@ -2,23 +2,34 @@ import React, {useState, useEffect} from 'react'
 import { getSingleItemsFromAPI } from '../../mockService/mockService';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
-
+import Loader from '../Loader/Loader';
 
 function ItemDetailContainer() {
   const [product,setProduct] = useState([]);
-  const {id} = useParams()
+  const [isLoading, setIsLoading] = useState(true)
+
+
+  let id = useParams().id
 
 
   useEffect(()=>{
       getSingleItemsFromAPI(id).then((itemsDB)=>{
         // console.log(itemsDB);
         setProduct(itemsDB); 
-      });
-    },[]
+        setIsLoading(false)
+      })
+      .catch((error) => {
+        console.error(error)
+        setIsLoading(false)
+      })
+      .finally(() => 
+      setIsLoading(false))
+    },[id]
   )
 
-  return (
-    <ItemDetail product={product}/>
+  if(isLoading) return <Loader className="text-center" color="#000"></Loader>;
+
+  return (  <ItemDetail product={product}/>
 );
 }
 
