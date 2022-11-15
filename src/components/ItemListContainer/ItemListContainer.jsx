@@ -24,6 +24,11 @@ function ItemListContainer() {
 
   return (
     <div className="container text-center mt-5 py-5">
+        <div className="container mt-3 py-5">
+            <h2 className="font-weight-bold">Our Featured</h2>
+            <hr/>
+            <p>Here you can check out our new products with fair price on rymo</p>
+        </div>
       <ItemList productsList={productsList}/>
     </div> 
 
