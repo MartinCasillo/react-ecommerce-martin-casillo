@@ -7,8 +7,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartContextProvider } from './components/storage/CartContext';
 import FooterContainer from './components/Footer/FooterContainer';
 import CartView from './components/CartView/CartView';
+import { testDatabase } from './services/firebase';
+
 
 function App() {
+  testDatabase()
   return (
     <div className="App"> 
       <CartContextProvider>
