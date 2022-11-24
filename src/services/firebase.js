@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {getFirestore, collection, getDocs} from 'firebase/firestore';
-import { doc, getDoc } from "firebase/firestore";
+import {getFirestore, collection, getDocs, doc, getDoc, query, where} from 'firebase/firestore';
 
 
 const firebaseConfig = {
@@ -23,7 +22,7 @@ export function testDatabase(){
 
 export async function getSingleItemsFromAPI(id){
 
-const docRef = doc(DB, "products", "1");
+const docRef = doc(DB, "products", id);
 const docSnap = await getDoc(docRef);
 
 if (docSnap.exists()) {
@@ -57,4 +56,19 @@ export async function getItemsFromAPI(){
     }catch(error){
         console.error(error)
     }
+}
+
+export async function getItemsFromAPIByCategory(categoryid){
+    const productsRef = collection(DB, "products");
+    const myQuery = query(productsRef, where("category", "==", categoryid));
+
+    const productsSnapshot = await getDocs(myQuery);
+
+    const products = productsSnapshot.docs.map(docu => {
+        return {
+            ...docu.data(),
+            id: docu.id,
+        }
+    });
+    return products;
 }

@@ -14,7 +14,6 @@ function ItemDetailContainer() {
 
   useEffect(()=>{
       getSingleItemsFromAPI(id).then((itemsDB)=>{
-        // console.log(itemsDB);
         setProduct(itemsDB); 
         setIsLoading(false)
       })

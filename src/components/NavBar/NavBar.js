@@ -14,7 +14,10 @@ function NavBar(){
                 <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto navItems">
                     <li className="nav-item">
-                    <Link className="nav-link" to="/">Home</Link>
+                    <Link className="nav-link" to="/main">Home</Link>
+                    </li>
+                    <li className="nav-item">
+                    <Link className="nav-link" to="/">Catalog</Link>
                     </li>
                     <li className="nav-item">
                     <Link className="nav-link " to="/category/Women">Women</Link>
@@ -26,7 +29,7 @@ function NavBar(){
                     <Link className="nav-link" to="#contacto">Contact</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link" to="#contacto"><CartWidget /></Link>
+                    <Link className="nav-link" to="/cart"><CartWidget /></Link>
                     </li>
                 </ul>
                 </div>

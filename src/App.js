@@ -8,6 +8,7 @@ import { CartContextProvider } from './components/storage/CartContext';
 import FooterContainer from './components/Footer/FooterContainer';
 import CartView from './components/CartView/CartView';
 import { testDatabase } from './services/firebase';
+import MainContainer from './components/Main/MainContainer';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <BrowserRouter>
             <NavBar />    
             <Routes>
+              <Route path="/main" element= { <MainContainer /> } />
               <Route path="/" element={ <ItemListContainer/> }/> 
               <Route path="/category/:categoryid" element={ <ItemListContainer/> }/> 
               <Route path="/detalle/:id" element={ <ItemDetailContainer/> }/> 
