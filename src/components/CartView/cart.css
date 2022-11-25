@@ -97,3 +97,7 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.botonCheckout{
+    margin-left: 10px!important
+}

@@ -45,13 +45,16 @@ export function CartContextProvider(props) {
   }
 
   function clear(){
-    /*  */
+    setCart([]);
   }
 
   const value = {
     cart,
     addToCart,
     totalItemsInCart,
+    clear,
+    totalPriceInCart,
+    removeItem,
   };
 
 

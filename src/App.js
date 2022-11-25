@@ -25,6 +25,7 @@ function App() {
               <Route path="/detalle/:id" element={ <ItemDetailContainer/> }/> 
               <Route path="*" element={ <h1 className='text-center'>404: Ruta no encontrada</h1>}/>
               <Route path="/cart" element={<CartView></CartView>} />
+              <Route path="/checkout" element= { <h1> Gracias por tu compra ! </h1> }/>
             </Routes>
         </BrowserRouter>
         <FooterContainer/>
