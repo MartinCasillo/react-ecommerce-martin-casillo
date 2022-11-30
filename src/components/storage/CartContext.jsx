@@ -37,7 +37,11 @@ export function CartContextProvider(props) {
   }
 
   function totalPriceInCart(){
-
+    let totalPrice = 0;
+    cart.forEach((itemInCart) => {
+      totalPrice = totalPrice + itemInCart.count * itemInCart.price;
+    });
+    return totalPrice;
   }
 
   function removeItem(itemId){

@@ -9,6 +9,7 @@ import FooterContainer from './components/Footer/FooterContainer';
 import CartView from './components/CartView/CartView';
 import { testDatabase } from './services/firebase';
 import MainContainer from './components/Main/MainContainer';
+// import { exportItemsToFirestore } from './services/firebase';
 
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
             </Routes>
         </BrowserRouter>
         <FooterContainer/>
-      </CartContextProvider>  
+      </CartContextProvider>
+      {/* <button onClick={exportItemsToFirestore}>Exportar mis items</button>   */}
     </div>
   );
 }

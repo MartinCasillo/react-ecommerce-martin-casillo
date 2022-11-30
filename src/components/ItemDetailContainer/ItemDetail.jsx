@@ -12,13 +12,16 @@ function ItemDetail({product}) {
     const navigate = useNavigate();
     const {addToCart,cart} = useContext(cartContext);
 
+    let itemInCart = cart.find((item) => product.id === item.id);
+    let stock = product.stock;
+    if (itemInCart) stock -= itemInCart.count;
 
     const onAddToCart = (count) => {
         Swal.fire({
             title:"Item agregado al carrito!",
             text:"¿Desea ir al carrito?",
             icon:"success",
-            confirmButtonText:"Ir al carrito",
+            confirmButtonText:"OK",
         }).then((result)=>{
             if(result.isConfirmed){
                 navigate("/cart")

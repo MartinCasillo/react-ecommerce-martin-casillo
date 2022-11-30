@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const CartView = () => {
   
-    const { cart, clear, removeItem, totalPriceInCart, } = useContext(cartContext);
+    const { cart, clear, totalPriceInCart, } = useContext(cartContext);
 
     const navigate = useNavigate()
 
@@ -28,8 +28,11 @@ const CartView = () => {
         }
 
         createBuyOrderFirestore(buyData).then( orderId => {
+
         clear();
-        navigate("/checkout");
+        
+        navigate(`/main`);
+        
         Swal.fire({
             title: "Gracias por tu compra !",
             text: "El ID de tu orden de compra es " + orderId,
