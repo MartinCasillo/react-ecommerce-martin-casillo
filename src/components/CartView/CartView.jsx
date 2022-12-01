@@ -30,7 +30,7 @@ const CartView = () => {
         
         Swal.fire({
             title: "Gracias por tu compra !",
-            text: "El ID de tu orden de compra es " + orderId,
+            text: "El ID de tu orden de compra es " + orderId.id,
             icon: "success",
         })
         
