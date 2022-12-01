@@ -61,7 +61,7 @@ const CartView = () => {
                     {
                         cart.map( cartItem => (
                             <tr>
-                                <td><button onClick={ () => removeItem() } className="buttonRemover cardButton img-fluid">Remover</button></td>
+                                <td><button onClick={ () => removeItem(cartItem.id) } className="buttonRemover cardButton img-fluid">Remover</button></td>
                                 <td><img src={cartItem.imgUrl} alt=""/></td>
                                 <td><h5>{cartItem.title}</h5></td>
                                 <td><h5>{cartItem.price}</h5></td>

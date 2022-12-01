@@ -45,7 +45,7 @@ export function CartContextProvider(props) {
   }
 
   function removeItem(itemId){
-    let newCarrito = cart.filter ((item) => item.id !== itemId)
+    let newCarrito = cart.filter ((item) => item.id === itemId)
     setCart(newCarrito);
   }
 
