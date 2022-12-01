@@ -1,5 +1,6 @@
 import React from 'react'
 import './footer.css'
+import { AiOutlineInstagram, AiOutlineFacebook, AiOutlineWhatsApp } from 'react-icons/ai';
 
 const FooterContainer = () => {
   return (
@@ -14,10 +15,10 @@ const FooterContainer = () => {
             <div className='footer-one col-lg-3 col-md-6 col-12 mb-3'>
                 <h5 className="pb-2">Features</h5>
                 <ul className="text-uppercase list-unstyled">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Hombres</a></li>
-                    <li><a href="#">Mujeres</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="/home">Inicio</a></li>
+                    <li><a href="/category/Male">Hombres</a></li>
+                    <li><a href="/category/Women">Mujeres</a></li>
+                    <li><a href="/contact">Contacto</a></li>
                 </ul>          
             </div>
             <div className="footer-one col-lg-3 col-md-6 col-12 mb-3">
@@ -38,11 +39,11 @@ const FooterContainer = () => {
             <div className='footer-one col-lg-3 col-md-6 col-12'>
                 <h5 className='pb-2'>Instagram</h5>
                 <div className="row">
-                    <img className="img-fluid w-25 h-100 m-2" src="img/insta/1.jpg" alt="foto1"/>
-                    <img className="img-fluid w-25 h-100 m-2" src="img/insta/2.jpg" alt="foto2"/>
-                    <img className="img-fluid w-25 h-100 m-2" src="img/insta/3.jpg" alt="foto3"/>
-                    <img className="img-fluid w-25 h-100 m-2" src="img/insta/4.jpg" alt="foto4"/>
-                    <img className="img-fluid w-25 h-100 m-2" src="img/insta/5.jpg" alt="foto5"/>
+                    <img className="img-fluid w-25 h-100 m-2" src="img/ig1.jpg" alt="foto1"/>
+                    <img className="img-fluid w-25 h-100 m-2" src="img/ig2.jpg" alt="foto2"/>
+                    <img className="img-fluid w-25 h-100 m-2" src="img/ig3.jpg" alt="foto3"/>
+                    <img className="img-fluid w-25 h-100 m-2" src="img/ig4.jpg" alt="foto4"/>
+                    <img className="img-fluid w-25 h-100 m-2" src="img/ig5.jpg" alt="foto5"/>
                 </div>
             </div>
         </div>
@@ -55,9 +56,9 @@ const FooterContainer = () => {
                     <p>Proyecto eCommer @ 2022. All Rights Reserved</p>
                 </div>
                 <div className="col-lg-4 col-md-6 col-12">
-                    <a href="#">Ejemplo1</a>
-                    <a href="#">Ejemplo2</a>
-                    <a href="#">Ejemplo3</a>
+                    <a href="#"><AiOutlineInstagram></AiOutlineInstagram></a>
+                    <a href="#"><AiOutlineFacebook></AiOutlineFacebook></a>
+                    <a href="#"><AiOutlineWhatsApp></AiOutlineWhatsApp></a>
                 </div>
             </div>
         </div>

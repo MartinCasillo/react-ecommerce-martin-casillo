@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'; 
 import './main.css';
 
 const MainContainer = () => {
@@ -28,7 +29,7 @@ const MainContainer = () => {
             <div class="container">
                 <h4>VENTA DE MITAD DE TEMPORADA</h4>
                 <h1>Coleccion Invierno <br/> CON 20% OFF</h1>
-                <button class="text-uppercase">COMPRAR AHORA</button>
+                <Link to="/"><button class="text-uppercase">COMPRAR AHORA</button></Link>
             </div>
         </section>
 

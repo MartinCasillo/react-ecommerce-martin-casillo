@@ -9,7 +9,9 @@ import { Link } from 'react-router-dom';
 
 function ItemDetail({product}) {
     const [isInCart, setIsInCart] = useState(false)
+
     const navigate = useNavigate();
+
     const {addToCart,cart} = useContext(cartContext);
 
     let itemInCart = cart.find((item) => product.id === item.id);
@@ -72,7 +74,7 @@ function ItemDetail({product}) {
                 <span>{product.detail}</span>
                 <br></br>
                 {!isInCart ? (
-                            <ClickCounter text="Add To Cart" onAddToCart={onAddToCart} stock={product.stock}/>
+                            <ClickCounter text="Add To Cart" onAddToCart={onAddToCart} stock={stock}/>
                     
                     ) : (
                         <div>

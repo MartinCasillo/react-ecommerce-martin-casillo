@@ -1,9 +1,10 @@
 import React, {useContext} from 'react';
-import { createBuyOrderFirestore } from '../../services/firebase';
+import {  createBuyOrderFirestoreWithStock } from '../../services/firebase';
 import cartContext from '../storage/CartContext';
 import './cart.css'
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import BuyForm from './BuyForm';
 
 const CartView = () => {
   
@@ -13,23 +14,17 @@ const CartView = () => {
 
     if(cart.length === 0) return <h1>Tu carrito esta vacio !</h1>;
   
- function createBuyOrder(){
+ function createBuyOrder(userData){
         
         const buyData = {
-            buyer: {
-                name:"Comision 34785",
-                phone: "123",
-                email: "asdasd@gmail.com"
-            },
+            buyer: userData,
             items: cart,
             total: totalPriceInCart(),
             date: new Date()
 
         }
 
-        createBuyOrderFirestore(buyData).then( orderId => {
-
-        clear();
+        createBuyOrderFirestoreWithStock(buyData).then( orderId => {
         
         navigate(`/main`);
         
@@ -38,6 +33,8 @@ const CartView = () => {
             text: "El ID de tu orden de compra es " + orderId,
             icon: "success",
         })
+        
+        clear();
     })
     
     }
@@ -104,10 +101,10 @@ const CartView = () => {
                             {/*  Total Price 
                              IVA */}
                         </div>
-                        <button onClick={ createBuyOrder } class="botonCheckout">PROCEED TO CHECKOUT</button>
                     </div> 
                 </div>
             </div>
+            <BuyForm onSubmit={createBuyOrder} />
         </section>
     </div>
   )

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc} from 'firebase/firestore';
+import {getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc, writeBatch, documentId} from 'firebase/firestore';
 
 
 const firebaseConfig = {
@@ -81,6 +81,45 @@ export async function createBuyOrderFirestore(buyOrderData){
     return(docRef.id)
 
 }
+
+
+export async function  createBuyOrderFirestoreWithStock(buyOrderData){
+
+    const collectionProductsRef = collection(DB,"products");
+    const collectionOrdersRef = collection(DB,"buyorders");
+    const batch = writeBatch(DB)
+    // const docRef = await addDoc(collectionRef, buyOrderData);
+    // return(docRef.id)
+
+    let arraysId = buyOrderData.items.map( (item) => {
+        return item.id;
+    } )
+
+    const q = query( collectionProductsRef, where( documentId(), "in", arraysId ))
+    
+    let products = await getDocs(q)
+
+    products.docs.map(doc => {
+        let stockActual = doc.data().stock;
+      
+        let itemInCart = buyOrderData.items.find( item => item.id === doc.id)
+      
+        let stockActualizado = stockActual - itemInCart.count;
+        
+        batch.update(doc.ref, { stock: stockActualizado });
+    
+    })
+
+    const docOrderRef = doc(collectionOrdersRef)
+
+    batch.set(docOrderRef, buyOrderData);
+
+    batch.commit();
+
+    return docOrderRef;
+}
+
+
 
 // export async function exportItemsToFirestore(){
 //     const itemsDB = [
