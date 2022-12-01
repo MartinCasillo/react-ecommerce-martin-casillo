@@ -5,7 +5,7 @@ function InputForm(props) {
     <>
       <input
         placeholder={props.title}
-        className="row my-5 "
+        className="row my-5 ms-1"
         required={true}
         value={props.value}
         name={props.name}

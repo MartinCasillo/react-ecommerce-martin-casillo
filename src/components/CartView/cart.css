@@ -101,3 +101,11 @@
 .botonCheckout{
     margin-left: 10px!important
 }
+
+.buttonRemover{
+    display: flex;
+    margin-left: 11%;
+    justify-content: center;
+    border-radius: 10px;
+    width: 100px;
+}

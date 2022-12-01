@@ -15,7 +15,7 @@ const FooterContainer = () => {
             <div className='footer-one col-lg-3 col-md-6 col-12 mb-3'>
                 <h5 className="pb-2">Features</h5>
                 <ul className="text-uppercase list-unstyled">
-                    <li><a href="/home">Inicio</a></li>
+                    <li><a href="/">Inicio</a></li>
                     <li><a href="/category/Male">Hombres</a></li>
                     <li><a href="/category/Women">Mujeres</a></li>
                     <li><a href="/contact">Contacto</a></li>
@@ -56,9 +56,9 @@ const FooterContainer = () => {
                     <p>Proyecto eCommer @ 2022. All Rights Reserved</p>
                 </div>
                 <div className="col-lg-4 col-md-6 col-12">
-                    <a href="#"><AiOutlineInstagram></AiOutlineInstagram></a>
-                    <a href="#"><AiOutlineFacebook></AiOutlineFacebook></a>
-                    <a href="#"><AiOutlineWhatsApp></AiOutlineWhatsApp></a>
+                   <a href="/"><AiOutlineInstagram></AiOutlineInstagram></a>
+                   <a href="/"><AiOutlineFacebook></AiOutlineFacebook></a>
+                   <a href="/"><AiOutlineWhatsApp></AiOutlineWhatsApp></a>
                 </div>
             </div>
         </div>

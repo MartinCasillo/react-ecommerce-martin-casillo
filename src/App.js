@@ -9,7 +9,8 @@ import FooterContainer from './components/Footer/FooterContainer';
 import CartView from './components/CartView/CartView';
 import { testDatabase } from './services/firebase';
 import MainContainer from './components/Main/MainContainer';
-// import { exportItemsToFirestore } from './services/firebase';
+import ContactContainer from './components/Contact/ContactContainer';
+
 
 
 function App() {
@@ -27,11 +28,12 @@ function App() {
               <Route path="*" element={ <h1 className='text-center'>404: Ruta no encontrada</h1>}/>
               <Route path="/cart" element={<CartView></CartView>} />
               <Route path="/checkout" element= { <h1> Gracias por tu compra ! </h1> }/>
+              <Route path="/contact" element= { <ContactContainer/> }/>
             </Routes>
         </BrowserRouter>
         <FooterContainer/>
       </CartContextProvider>
-      {/* <button onClick={exportItemsToFirestore}>Exportar mis items</button>   */}
+      
     </div>
   );
 }

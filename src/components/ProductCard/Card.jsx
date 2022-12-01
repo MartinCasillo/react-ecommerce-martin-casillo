@@ -18,7 +18,7 @@ function Card(props) {
         <h5 className="p-name">{props.title}</h5>
         <h4 className="p-price">$ {props.price}</h4>
         <Link to={`/detalle/${props.id}`}>
-          <button className="buy-btn">COMPRAR AHORA</button>
+          <button className="cardButton buy-btn">COMPRAR AHORA</button>
         </Link>
         
 </div>

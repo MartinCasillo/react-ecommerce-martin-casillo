@@ -108,6 +108,7 @@ export async function  createBuyOrderFirestoreWithStock(buyOrderData){
         
         batch.update(doc.ref, { stock: stockActualizado });
     
+        return stockActualizado;
     })
 
     const docOrderRef = doc(collectionOrdersRef)

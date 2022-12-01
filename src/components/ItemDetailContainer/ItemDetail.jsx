@@ -77,9 +77,9 @@ function ItemDetail({product}) {
                             <ClickCounter text="Add To Cart" onAddToCart={onAddToCart} stock={stock}/>
                     
                     ) : (
-                        <div>
-                            <button className='p-5'>Ir al Catalogo</button>
-                            <Link to="/cart"><button className='p-5'>Ir al Carrito</button></Link>
+                        <div className='contenedorBoton g-5'>
+                            <Link to="/"><button className='botonDetail'>Ir al Catalogo</button></Link>
+                            <Link to="/cart"><button className='botonDetail'>Ir al Carrito</button></Link>
                         </div>
                         )   
             } 

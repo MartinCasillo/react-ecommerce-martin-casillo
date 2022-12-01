@@ -8,11 +8,14 @@ import BuyForm from './BuyForm';
 
 const CartView = () => {
   
-    const { cart, clear, totalPriceInCart, } = useContext(cartContext);
+    const { cart, clear, totalPriceInCart, removeItem } = useContext(cartContext);
 
     const navigate = useNavigate()
 
-    if(cart.length === 0) return <h1>Tu carrito esta vacio !</h1>;
+    if(cart.length === 0) 
+    return  <h1 className='text-center my-5'>Tu carrito esta vacio !</h1> ;
+        
+    
   
  function createBuyOrder(userData){
         
@@ -41,7 +44,7 @@ const CartView = () => {
 
     return (
     <div>
-        <section id="cart-container" class="container my-5">
+        <section id="cart-container" className="container my-5">
             <table width="100%">
                 <thead>
                     <tr>
@@ -58,7 +61,7 @@ const CartView = () => {
                     {
                         cart.map( cartItem => (
                             <tr>
-                                <td><button>Remover</button></td>
+                                <td><button onClick={ () => removeItem() } className="buttonRemover cardButton img-fluid">Remover</button></td>
                                 <td><img src={cartItem.imgUrl} alt=""/></td>
                                 <td><h5>{cartItem.title}</h5></td>
                                 <td><h5>{cartItem.price}</h5></td>
@@ -71,9 +74,9 @@ const CartView = () => {
             </table>
         </section>
 
-        <section id="cart-bottom" class="container">
-            <div class="row">
-                <div class="coupon col-lg-6 col-md-6 col-12 mb-4">
+        <section id="cart-bottom" className="container">
+            <div className="row">
+                <div className="coupon col-lg-6 col-md-6 col-12 mb-4">
                     <div>
                         <h5>COUPON</h5>
                         <p>Enter your coupon code if youb have one</p>
@@ -81,23 +84,23 @@ const CartView = () => {
                         <button>APPLY COUPON</button>
                     </div>
                 </div>
-                <div class="total col-lg-6 col-md-6 col-12">
+                <div className=" total col-lg-6 col-md-6 col-12">
                     <div>
                         <h5>CART TOTAL</h5>
-                        <div class="d-flex justify-content-between">
+                        <div className="d-flex justify-content-between">
                             <h6>Subtotal</h6>
-                            <p>$225.00</p> 
+                            <p>{totalPriceInCart()}</p> 
                             {/* TotalPrice function */}
                         </div>
-                        <div class="d-flex justify-content-between">
-                            <h6>Shippping</h6>
-                            <p>$225.00</p>
+                        <div className="d-flex justify-content-between">
+                            <h6>Impuestos</h6>
+                            <p>$ {totalPriceInCart() * 0.21}</p>
                             {/* IVA */}
                         </div>
-                        <hr class="second-hr"/>
-                        <div class="d-flex justify-content-between">
+                        <hr className="second-hr"/>
+                        <div className="d-flex justify-content-between">
                             <h6>Total</h6>
-                            <p>$225.00</p>
+                            <p>$ {  totalPriceInCart() * 1.21}</p>
                             {/*  Total Price 
                              IVA */}
                         </div>
