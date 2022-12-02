@@ -44,11 +44,10 @@ export function CartContextProvider(props) {
     return totalPrice;
   }
 
-  function removeItem(itemId){
-    let newCarrito = cart.filter ((item) => item.id === itemId)
+  function removeItem(itemId) {
+    let newCarrito = cart.filter((itemInCart) => itemInCart.id !== itemId);
     setCart(newCarrito);
-  }
-
+}
   function clear(){
     setCart([]);
   }
